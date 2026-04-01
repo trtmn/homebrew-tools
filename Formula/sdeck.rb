@@ -1,10 +1,10 @@
-class Deck < Formula
+class Sdeck < Formula
   include Language::Python::Virtualenv
 
   desc "Manage Elgato Stream Deck profiles, pages, and buttons from the CLI"
   homepage "https://github.com/trtmn/streamdeck-profiles"
-  url "https://github.com/trtmn/streamdeck-profiles/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "06a7927794e171f81edecf2cefdc736487a007059878df073f081c54c43c7924"
+  url "https://github.com/trtmn/streamdeck-profiles/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "48f656e887ac4bb063bb01f4e11e5bd1f0a9a107fd397c2ba611cb4670743d49"
   license "MIT"
 
   depends_on "python@3.12"
@@ -19,6 +19,6 @@ class Deck < Formula
   end
 
   test do
-    assert_match "Usage:", shell_output("#{bin}/deck --help")
+    assert_match "Usage:", shell_output("#{bin}/sdeck --help")
   end
 end
