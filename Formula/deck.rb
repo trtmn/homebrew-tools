@@ -3,18 +3,19 @@ class Deck < Formula
 
   desc "Manage Elgato Stream Deck profiles, pages, and buttons from the CLI"
   homepage "https://github.com/trtmn/streamdeck-profiles"
-  url "https://github.com/trtmn/streamdeck-profiles/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "c7a71dd6fa11b5a134ff5e87641d1ae25852cb62a66c6346b426edf7cba1c10a"
+  url "https://github.com/trtmn/streamdeck-profiles/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "06a7927794e171f81edecf2cefdc736487a007059878df073f081c54c43c7924"
   license "MIT"
 
   depends_on "python@3.12"
 
+  resource "click" do
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+  end
+
   def install
-    venv = virtualenv_create(libexec, "python3.12")
-    # pydantic-core is a compiled Rust extension — must use binary wheels
-    system libexec/"bin/pip", "install", "pydantic>=2.0", "click>=8.0"
-    venv.pip_install buildpath
-    bin.install_symlink libexec/"bin/deck"
+    virtualenv_install_with_resources
   end
 
   test do
