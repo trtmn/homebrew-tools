@@ -1,4 +1,6 @@
 class Deck < Formula
+  include Language::Python::Virtualenv
+
   desc "Manage Elgato Stream Deck profiles, pages, and buttons from the CLI"
   homepage "https://github.com/trtmn/streamdeck-profiles"
   url "https://github.com/trtmn/streamdeck-profiles/archive/refs/tags/v0.1.0.tar.gz"
