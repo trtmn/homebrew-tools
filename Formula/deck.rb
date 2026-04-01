@@ -11,8 +11,8 @@ class Deck < Formula
 
   def install
     venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install "pydantic>=2.0"
-    venv.pip_install "click>=8.0"
+    # pydantic-core is a compiled Rust extension — must use binary wheels
+    system libexec/"bin/pip", "install", "pydantic>=2.0", "click>=8.0"
     venv.pip_install buildpath
     bin.install_symlink libexec/"bin/deck"
   end
