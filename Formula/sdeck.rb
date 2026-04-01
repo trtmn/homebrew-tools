@@ -3,8 +3,8 @@ class Sdeck < Formula
 
   desc "Manage Elgato Stream Deck profiles, pages, and buttons from the CLI"
   homepage "https://github.com/trtmn/streamdeck-profiles"
-  url "https://github.com/trtmn/streamdeck-profiles/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "48f656e887ac4bb063bb01f4e11e5bd1f0a9a107fd397c2ba611cb4670743d49"
+  url "https://github.com/trtmn/streamdeck-profiles/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "e7e9df43b4914f5ad672164773ad5241350bca890db62866e71c77594525b3ad"
   license "MIT"
 
   depends_on "python@3.12"
